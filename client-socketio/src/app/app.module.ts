@@ -8,7 +8,7 @@ import { SocketService } from './socket.service';
 import { CesarService } from './cesar.service';
 import { CryptoJsService } from './crypto.service';
 
-const config: SocketIoConfig = { url: 'https://3000-cyan-porcupine-0wk7inbf.ws-eu03.gitpod.io/', options: {/*transport : ['websocket'], withCredentials:false*/} };
+const config: SocketIoConfig = { url: 'https://3000-gray-mollusk-1j6vhtbl.ws-eu07.gitpod.io/', options: {/*transport : ['websocket'], withCredentials:false*/} };
 
 @NgModule({
   declarations: [
