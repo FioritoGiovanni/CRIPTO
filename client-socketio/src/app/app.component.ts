@@ -10,12 +10,13 @@ import {FormData} from './form.data.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  messageList:  string[] = [];
+  messageList:  FormData[] = [];
   obs: Observable<Object>;
   chiave1:string;
   message:string;
   chiaveD: string;
   t :String[]= [];
+  user:string;
 
 
   constructor(private socketService: SocketService,private cesarService : CesarService,private cryptoJsService:CryptoJsService) {
@@ -53,9 +54,10 @@ export class AppComponent implements OnInit {
 
   decodeData = (messageData: string) => {
       let received: FormData = JSON.parse(messageData);
+
       console.log("messagereceived: " + JSON.stringify(received))
       received.message = this.cryptoJsService.decodeDes(received.message, this.chiaveD);
-      this.messageList.push("messaggio cifrato: " + messageData + " messaggio decifrato " + JSON.stringify(received));
+      this.messageList.push( received);
       }
 
   getNewClient = (message:string) => {
